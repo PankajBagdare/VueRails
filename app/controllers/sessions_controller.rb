@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    debugger
     if user.present?
       if (params[:password] == user.password)
         token = SecureRandom.hex
